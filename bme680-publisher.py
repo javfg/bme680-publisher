@@ -2,6 +2,7 @@
 
 import argparse
 import flask
+from flask_cors import CORS
 import json
 import logging
 
@@ -15,6 +16,7 @@ args = parser.parse_args()
 
 # Flask config.
 app = flask.Flask(__name__)
+CORS(app)
 log = logging.getLogger('werkzeug')
 
 if not args.verbose:
